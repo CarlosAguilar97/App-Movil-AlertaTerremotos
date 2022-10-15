@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "309272447490",
+    "project_id": "app-movil-alerta-terremotos",
+    "storage_bucket": "app-movil-alerta-terremotos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309272447490:android:e575e51ba31793c8e4b51b",
+        "android_client_info": {
+          "package_name": "com.example.app_movil_alerta_terremotos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309272447490-bm6lq7a9euals8lgdhppllpletv6svfe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAAdhIw3jMu0OysEGjlW0S8NLdWv9Y6Tw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309272447490-bm6lq7a9euals8lgdhppllpletv6svfe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
