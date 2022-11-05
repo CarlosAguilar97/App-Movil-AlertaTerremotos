@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.app_movil_alerta_terremotos.Rutas
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

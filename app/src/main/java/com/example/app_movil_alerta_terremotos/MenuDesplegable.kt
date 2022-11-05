@@ -16,13 +16,15 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NavigationPage() {
+fun NavigationPage(NavegarLogin:()-> Unit) {
 
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val coroutineScope = rememberCoroutineScope()
     val navController = rememberNavController()
 
-    ModalNavigationDrawer(drawerContent = { DrawerContent(navController, drawerState) }, drawerState = drawerState) {
+    ModalNavigationDrawer(
+        drawerContent = {
+            DrawerContent(navController, drawerState) }, drawerState = drawerState) {
 
 
         androidx.compose.material3.Scaffold(topBar = {
@@ -67,17 +69,20 @@ fun NavigationPage() {
 
                     }
                     composable("SalirPagina") {
+                        NavegarLogin()
 
                     }
 
                 }
 
-
             }
+
 
         }
 
     }
 
 }
+
+
 

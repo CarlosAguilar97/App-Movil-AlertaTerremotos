@@ -8,12 +8,15 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.app_movil_alerta_terremotos.Auth.AuthRepository
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
         private val repository: AuthRepository = AuthRepository()
 ):ViewModel() {
         val currentUser = repository.currentUser
+
     val hasUser:Boolean
     get() = repository.hasUser()
     var loginUiState by mutableStateOf(LoginUiState())

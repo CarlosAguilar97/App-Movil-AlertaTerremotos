@@ -1,5 +1,6 @@
 package com.example.app_movil_alerta_terremotos
 
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -23,14 +24,11 @@ import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.graphics.Color.Companion.Red
 import androidx.compose.ui.platform.LocalContext
 import com.example.app_movil_alerta_terremotos.Login.LoginViewModel
 
-@Composable
-fun IconsExample() {
-    Icon(Icons.Filled.Menu, "menu")   // ok
-    Icon(Icons.Filled.Print, "print") // ok
-}
+
 @Composable 
 fun FrmLogin(
     loginViewModel: LoginViewModel? = null,
@@ -40,9 +38,10 @@ fun FrmLogin(
     val loginUiState = loginViewModel?.loginUiState
     val isError = loginUiState?.loginError != null
     val context = LocalContext.current
+
    // val usuario = remember { mutableStateOf("") }
     //val contra = remember { mutableStateOf("") }
-    var hidden = remember { mutableStateOf(false) }
+    val hidden = remember { mutableStateOf(false) }
 
     Box() {
         Image(
@@ -102,6 +101,9 @@ fun FrmLogin(
            Spacer(modifier = Modifier.padding(2.dp))
            OutlinedTextField( modifier = Modifier.fillMaxWidth(),
                value = loginUiState?.userName ?: "",
+               colors = TextFieldDefaults.outlinedTextFieldColors(
+                   focusedBorderColor = Red,
+                   unfocusedBorderColor = Red),
                onValueChange = {
                   loginViewModel?.onUserNameChange(it)
                },
@@ -109,13 +111,16 @@ fun FrmLogin(
                              Icon(imageVector = Icons.Default.Person, contentDescription = null)
                },
                label = {
-                   Text(text = "Email")
+                   Text(text = "Email", color = Color.Red)
 
                }
            )
            Spacer(modifier = Modifier.padding(2.dp))
            OutlinedTextField(modifier = Modifier.fillMaxWidth(),
                value = loginUiState?.password ?: "",
+               colors = TextFieldDefaults.outlinedTextFieldColors(
+                   focusedBorderColor = Red,
+                   unfocusedBorderColor = Red),
                onValueChange = { loginViewModel?.onPasswordNameChange(it) },
                leadingIcon = {
                              Icon(
@@ -123,7 +128,7 @@ fun FrmLogin(
                                  contentDescription = null,
                              )
                },
-               label = { Text("Contraseña") },
+               label = { Text("Contraseña",color = Color.Red) },
                singleLine = true,
                placeholder = { Text("Contraseña") },
                visualTransformation = if (hidden.value) VisualTransformation.None else PasswordVisualTransformation(),
@@ -165,16 +170,19 @@ fun FrmLogin(
                        )
                )
 
+           if(loginUiState?.isLoading == true){
+               Row(){
+                   CircularProgressIndicator()
+               }
 
-       }
-       if(loginUiState?.isLoading == true){
-           CircularProgressIndicator()
-       }
-       LaunchedEffect(key1 = loginViewModel?.hasUser){
-           if (loginViewModel?.hasUser == true){
-               Navegarhome()
+           }
+           LaunchedEffect(key1 = loginViewModel?.hasUser){
+               if (loginViewModel?.hasUser == true){
+                   Navegarhome()
+               }
            }
        }
+
    }
 
 

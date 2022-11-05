@@ -1,5 +1,6 @@
 package com.example.app_movil_alerta_terremotos
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -24,9 +25,31 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 @Composable
 fun FrmApoderado(){
+    var TAG: String = "App-Sismos"
+    fun agregarapo(correo : String,nombre : String , apellido : String, celular : String){
+        val db = Firebase.firestore
+        val libro = hashMapOf(
+            "Nombre" to nombre,
+            "Apellido" to apellido,
+            "Celular" to celular,
+            "Correo" to correo,
+
+        )
+        db.collection("Apoderado")
+            .add(libro)
+            .addOnSuccessListener { documentReference ->
+                Log.d(TAG, "Documento agregado con ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { error ->
+                Log.w(TAG, "Error al agregar el documento", error)
+
+            }
+    }
     val nombre = remember { mutableStateOf("") }
     val apellido = remember { mutableStateOf("") }
     val celular = remember { mutableStateOf("") }
@@ -129,7 +152,7 @@ fun FrmApoderado(){
 
             Button(modifier = Modifier.fillMaxWidth(),
                 onClick = {
-
+                    agregarapo(correo.value,nombre.value, apellido.value, celular.value)
                 },shape = RoundedCornerShape(60)
             ) {
                 Text(text = "Agregar")

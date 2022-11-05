@@ -1,5 +1,6 @@
 package com.example.app_movil_alerta_terremotos
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -19,6 +20,8 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun FrmInicio(NavegarLogin: () -> Unit,NavegarRegistro:() -> Unit){
+    //val dataStore = StoreUserEmail(Context)
+    //var mail = dataStore.getEmail.collectAsState(initial = "")
     Column(
     ) {
 
@@ -48,7 +51,9 @@ fun FrmInicio(NavegarLogin: () -> Unit,NavegarRegistro:() -> Unit){
             ) {
 
 
-                Button(onClick = {NavegarLogin()},Modifier.width(200.dp),shape = RoundedCornerShape(60),content={
+                Button(onClick = {
+                    NavegarLogin()
+                                 },Modifier.width(200.dp),shape = RoundedCornerShape(60),content={
                     Text(text = "Iniciar Sesión", color = Color.White)
                 })
                 Spacer(modifier = Modifier.padding(3.dp))

@@ -14,7 +14,7 @@ fun NavegacionHost(loginViewModel: LoginViewModel){
 
     NavHost(
         navController = navController,
-        startDestination =Rutas.inicio.ruta) {
+        startDestination = Rutas.inicio.ruta) {
         composable(Rutas.inicio.ruta){
             FrmInicio (
                NavegarLogin = {

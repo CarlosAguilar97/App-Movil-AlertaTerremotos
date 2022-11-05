@@ -9,16 +9,28 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.navOptions
+import com.example.app_movil_alerta_terremotos.FrmLogin
+import com.example.app_movil_alerta_terremotos.Login.LoginViewModel
+import com.example.app_movil_alerta_terremotos.Rutas
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
-
+private lateinit var Auth: FirebaseAuth
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NavigationDrawerItems(navController: NavHostController, drawerState: DrawerState) {
-
+fun NavigationDrawerItems(
+    navController: NavHostController,
+    drawerState: DrawerState,
+    loginViewModel: LoginViewModel? = null) {
+    val loginUiState = loginViewModel?.loginUiState
+    val isError = loginUiState?.loginError != null
+    val context = LocalContext.current
     var scope = rememberCoroutineScope()
 
     var currentBackStackEntryAsState = navController.currentBackStackEntryAsState()
@@ -102,14 +114,12 @@ fun NavigationDrawerItems(navController: NavHostController, drawerState: DrawerS
     NavigationDrawerItem(
         icon = { Icon(Icons.Filled.ExitToApp, "Salir") },
 
-        label = { Text(text = "Salir") },
+        label = { Text(text = "Cerrar Sesión") },
         selected = destination?.route == "SalirPagina",
         onClick = {
-            navController.navigate("SalirPagina", navOptions {
-                this.launchSingleTop = true
-                this.restoreState = true
-            })
+
             scope.launch {
+                Firebase.auth.signOut()
                 drawerState.close()
             }
         },

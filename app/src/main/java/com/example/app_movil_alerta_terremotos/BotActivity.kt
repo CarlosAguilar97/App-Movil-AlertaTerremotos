@@ -1,5 +1,6 @@
 package com.example.app_movil_alerta_terremotos
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -20,9 +21,29 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 @Composable
 fun FrmBot(){
+    var TAG: String = "App-Sismos"
+    fun estadobot(Id : String, estado : Boolean){
+        val db = Firebase.firestore
+        val libro = hashMapOf(
+            "ID" to Id,
+            "Estado" to estado,
+
+        )
+        db.collection("Bot")
+            .add(libro)
+            .addOnSuccessListener { documentReference ->
+                Log.d(TAG, "Documento agregado con ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { error ->
+                Log.w(TAG, "Error al agregar el documento", error)
+
+            }
+    }
     var res = remember { mutableStateOf(false) }//1
 
     Box() {
@@ -71,7 +92,7 @@ fun FrmBot(){
                             onClick = { res.value = true } ,shape = RoundedCornerShape(60)
                             ,colors = ButtonDefaults.buttonColors(backgroundColor = Color.Gray)) {
                             Text(text = "On")
-
+                            //estadobot(id.value, estado = true)
                         }
                         Button( onClick = {
                             res.value = false
