@@ -1,12 +1,14 @@
 package com.example.app_movil_alerta_terremotos
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
 
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.app_movil_alerta_terremotos.Login.LoginViewModel
-
+import com.example.app_movil_alerta_terremotos.Model.LocationDetails
+import com.example.app_movil_alerta_terremotos.Model.LocationViewModel
 
 @Composable
 fun NavegacionHost(loginViewModel: LoginViewModel){
@@ -14,7 +16,8 @@ fun NavegacionHost(loginViewModel: LoginViewModel){
 
     NavHost(
         navController = navController,
-        startDestination = Rutas.inicio.ruta) {
+        startDestination = Rutas.inicio.ruta,
+    ) {
         composable(Rutas.inicio.ruta){
             FrmInicio (
                NavegarLogin = {
@@ -24,7 +27,6 @@ fun NavegacionHost(loginViewModel: LoginViewModel){
                     navController.navigate(Rutas.registro.ruta)
                 }
             )
-
         }
         composable(Rutas.login.ruta){
             FrmLogin (
@@ -64,3 +66,4 @@ fun NavegacionHost(loginViewModel: LoginViewModel){
         }
     }
 }
+

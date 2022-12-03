@@ -34,14 +34,14 @@ fun DrawerHeader() {
             modifier = Modifier
                 .clip(CircleShape)
                 .width(150.dp)
-                .border(width = 2.dp, color = Color.Gray, shape = CircleShape)
+                .border(width = 5.dp, color = Color.White, shape = CircleShape)
         )
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        Text(text = currentUser?.displayName.toString(), fontSize = TextUnit(18F, TextUnitType.Sp), color = Color.Black,)
+        Text(text = currentUser?.displayName.toString(), fontSize = TextUnit(18F, TextUnitType.Sp), color = Color.White)
         Spacer(modifier = Modifier.height(2.dp))
-        Text(text = currentUser?.email.toString(), fontSize = TextUnit(14F, TextUnitType.Sp), color = Color.Gray)
+        Text(text = currentUser?.email.toString(), fontSize = TextUnit(18F, TextUnitType.Sp), color = Color.White)
 
 
 

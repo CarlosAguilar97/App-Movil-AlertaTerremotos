@@ -57,7 +57,6 @@ fun FrmLogin(
         contentAlignment = Alignment.Center
     ) {
         Image(
-
             painter = painterResource(id = R.drawable.logo),
             contentDescription = "", modifier = Modifier.size(150.dp)
         )

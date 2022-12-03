@@ -10,5 +10,6 @@ sealed class Rutas(
     object  registro: Rutas("Registro")
     object  apoderado: Rutas("Apoderado")
     object  bot: Rutas("Bot")
+    object  Salir: Rutas("Salir")
 
 }

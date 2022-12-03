@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "app-movil-alerta-terremotos",
+  "private_key_id": "6700d50dcb0d02776bd23c77dbca88ee598618fc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCZaF8/p5rvUkU2\nCQtGiR9oSjrkYhABhAno5j0jPA494V+sYRY9KqJJKrH/UefWrZwR88Sl7kLk8dzR\nKloAVD0od9AXTjkAIAsckHoyO38RuOl0txlC0tNdOcCLIoFl1BBtVS5wHNfMSMLg\nuLwyu9EFtidRXHQYBipKH8TqO1UCvOAretRMZJsWXAytLx0BQ2Fr9MEfwf2UHQpO\nC4+7n00u3PEXtjlmZQ4p0Y8/Yvb6Ujyg6WgBZt25ij6k4CWAPr99MCJbtMZSBK9F\nC1sqpvaE7T0rpNASvuu+ZCa9dSWjuxYsDD81cCYRYXFTR1YddZRXiQif8Vvh/ZM4\n+H9Bq2OFAgMBAAECggEAEJEedCvgBgde9RJt9syZKTSW/pH+g4NkZJP0t0jlitY7\ndEy5z5o6k2c6eMW6IUt3ZtLqAjdkXwAlpisKNC3kuumRferTKgnL2WZa4/Db7KiJ\nAbNCVZ6Z99/kRMJRshMAQSZpUO80eNnEvesFW/8/d/vvbBBtcyi7SWz74YXNzPE5\nALihjvDKnSqtLRHfW1zoLA92HGraikQPDBnZnhVMRbj0SRIO4JzbXnRU0xSwQ/oH\nOG8LgRCyJl8xx1hU8mOgba8fInAalDfsdubqrYnTMVuNjznHk605jVUnjP5xmbOD\nS5zF+3McVv4oIE9MBgVp7svnvOBeUUT6Dv5UM1vj4QKBgQDGfNMLakigxotuoxgX\nkg3zTvbZz/ELB3F+l+r0hz09R0628WBZLSXKkvr8WlceI0lzO5nO6Vzu2KeFBmLU\nNbi+/qKKkxNY5ht3mTuBFrGt2OLSGPZFg1obqfrxsF7wIeLD7TMkc91/i0CfmPWd\nkWLeZWFiNlOpu20GhlFL+x/nEQKBgQDF26pTG6UHEEUl1ZqmZ58Q8CKOf5TL82Re\nOH3BtgXZd2raBkaKkImKsKgxSmD2foNqz19oL9BgmPceu81V0pPvMYHTaM4ZE8fF\nUqxBujxn3OYWZ532yQV1N1g6q5swKq/dOlegi2Kow0Z8rEmkiHnxvztl7XkxQBvZ\npxUd6Om9NQKBgAJnnL70qLCZ9zJ981rFwDmEaWU2KbtyeaOI/6W6xbkqVf/NaNdr\nvpt3sGbCSW/qCYfF3xUsqp2SLmVkMGpVxEk8GIgJRCC9mPOX/aqQtdJfYFAfUUyC\nTOMs6gdnlZ7fKjopc4criDF1ZHEKj187VbFQFR/1fIn/5VBA7Fc5UaehAoGAdnay\nQTZRFayZKjD9elqac6LDnfwnVAGze3JpYT0hvXXxhP6y563onCBvY6u76HoRJzdo\nUVInel67vywEojkFl/ZVXAXpODyOpMd+GZBvMGSjYpDBlIwBd5AehGpQ7YLxbwzK\ngHZUKOVaY7UoFpocITE1WC7aHDHdOvD+BL16jW0CgYEAjVJ+fc2M0qkbiXohjLUq\nbzbP0+5FcgNOcAjpafgZPrg4vCxhBGjXlv3ME3Vo2fzOzVl3ihSj1GyO6W6YFJmI\ncHXf0WqZJ+IiQIvKPEFoUbtdOlLv3u0IANvAaOoqE0JL+6M6gnl/UZ7P8zCS8ex6\n38WbLa+Bk07ktfIIlEaMyhM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-wbkjh@app-movil-alerta-terremotos.iam.gserviceaccount.com",
+  "client_id": "117033018253257342262",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-wbkjh%40app-movil-alerta-terremotos.iam.gserviceaccount.com"
+}
